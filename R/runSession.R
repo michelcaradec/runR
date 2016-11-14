@@ -37,7 +37,7 @@ runSession <- function(pace,
   if (length(session$pace) != length(session$heart.rate)) {
     stop("Length mismatch")
   }
-  if (!is.na(session$profile)) {
+  if (is.object(session$profile)) {
     .validateRunProfile(session$profile)
   }
 }
